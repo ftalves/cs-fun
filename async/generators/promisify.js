@@ -2,7 +2,7 @@
     Turns a generator into a promise. Can use *yield* inside the generator and
   it will have the same effect as *await*.
 */
-const promisify = generator => () => new Promise((resolve, reject) => {
+const promisify = generator => new Promise((resolve, reject) => {
   const gen = generator()
 
   const step = value => {
